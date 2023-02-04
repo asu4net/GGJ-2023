@@ -15,6 +15,16 @@ public class CarWaypoints : MonoBehaviour
     {
         FillWaypoints();
     }
+
+    public Vector3 GetWaypointPos(int index)
+    {
+        return wayPoints[index].position;
+    }
+
+    public int Count()
+    {
+        return wayPoints.Count;
+    }
     
     void Update()
     {
