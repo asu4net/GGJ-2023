@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_TrackLimit
+    second: {fileID: 2100000, guid: 74cba70daea6fec4a9e086af272bdb1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #40
+    second: {fileID: 2100000, guid: 74cba70daea6fec4a9e086af272bdb1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: scalextric
     second: {fileID: 2100000, guid: 3e14101b26255ea47bc794343e6cad65, type: 2}
   materials:
