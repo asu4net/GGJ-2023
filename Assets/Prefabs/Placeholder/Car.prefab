@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointsSlot: {fileID: 0}
+  speed: 20
+  distanceToChangeWaypoint: 0.1
+  lookAtSmoothValue: 0.05
 --- !u!1 &4717738697885073814
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4717738697885073814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -187,7 +190,7 @@ Transform:
   - {fileID: 4717738697451383855}
   m_Father: {fileID: 4717738697490903983}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &4717738698038761057
 GameObject:
   m_ObjectHideFlags: 0
