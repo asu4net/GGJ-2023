@@ -24,7 +24,7 @@ public class RootRegion : MonoBehaviour
 
     public UnityEvent<QualityTiming> OnRootCompletion;
     public UnityEvent OnRootPress;
-    public UnityEvent OnRootRelease;
+    //public UnityEvent OnRootRelease;
 
     private Transform Car;
 
@@ -60,9 +60,8 @@ public class RootRegion : MonoBehaviour
 
         if (Input.GetKeyUp(RootButton) || Input.GetKeyUp(SecondaryRootButton))
         {
-            if (isRooting)
+            if (isRooting && hasRooted)
             {
-                OnRootRelease.Invoke();
                 heldTime = Time.fixedTime - lastHeldTime;
 
                 if (heldTime < holdTimeThreshold)
@@ -121,5 +120,6 @@ public class RootRegion : MonoBehaviour
         }
         canRoot = false;
         hasRooted = false;
+        isRooting = false;
     }
 }
