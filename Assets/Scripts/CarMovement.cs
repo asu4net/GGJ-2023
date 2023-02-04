@@ -33,6 +33,9 @@ public class CarMovement : MonoBehaviour
             case RootRegion.QualityTiming.Perfect:
                 StartCoroutine(AsyncSpeedBoost(22f, 2f));
                 break;
+
+            default:
+                break;
         }
     }
 
