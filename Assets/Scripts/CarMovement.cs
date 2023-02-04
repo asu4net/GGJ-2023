@@ -11,9 +11,21 @@ public class CarMovement : MonoBehaviour
     [SerializeField] [Range(0, 1)] private float lookAtSmoothValue = 0.5f;
     
     private int currWaypoint = 0;
+    private float defaultSpeed = 0;
     
-    void Awake()
+    public void ApplySpeedBoost(float newSpeed, float time)
+        => StartCoroutine(AsyncSpeedBoost(newSpeed, time));
+    
+    private IEnumerator AsyncSpeedBoost(float newSpeed, float time)
     {
+        speed = newSpeed;
+        yield return new WaitForSeconds(time);
+        speed = defaultSpeed;
+    }
+    
+    private void Awake()
+    {
+        defaultSpeed = speed;
         if (!waypointsSlot)
             waypointsSlot = FindObjectOfType<CarWaypoints>();
         if (!waypointsSlot)
@@ -27,7 +39,7 @@ public class CarMovement : MonoBehaviour
         }
     }
     
-    void Update()
+    private void Update()
     {
         Vector3 destination = waypointsSlot.GetWaypointPos(currWaypoint);
         Vector3 currentDir = (destination - transform.position).normalized;

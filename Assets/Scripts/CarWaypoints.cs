@@ -7,11 +7,11 @@ using UnityEngine.Serialization;
 [ExecuteInEditMode]
 public class CarWaypoints : MonoBehaviour
 {
-    List<Transform> wayPoints = new();
-    [SerializeField] Color debugColor = Color.green;
-    [SerializeField] float sphereRadius = 0.5f;
+    private List<Transform> wayPoints = new();
+    [SerializeField] private Color debugColor = Color.green;
+    [SerializeField] private float sphereRadius = 0.5f;
     
-    void Awake()
+    private void Awake()
     {
         FillWaypoints();
     }
@@ -26,7 +26,7 @@ public class CarWaypoints : MonoBehaviour
         return wayPoints.Count;
     }
     
-    void Update()
+    private void Update()
     {
         if (!Application.isPlaying)
             FillWaypoints();
@@ -39,7 +39,7 @@ public class CarWaypoints : MonoBehaviour
         });
     }
     
-    void FillWaypoints()
+    private void FillWaypoints()
     {
         wayPoints.Clear();
         foreach (Transform child in transform)
@@ -49,7 +49,7 @@ public class CarWaypoints : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = debugColor;
         if (wayPoints.Count > 0)
