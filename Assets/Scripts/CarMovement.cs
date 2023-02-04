@@ -12,8 +12,11 @@ public class CarMovement : MonoBehaviour
     
     private int currWaypoint = 0;
     private float defaultSpeed = 0;
-
-    private IEnumerator AsyncSpeedBoos(float newSpeed, float time)
+    
+    public void ApplySpeedBoost(float newSpeed, float time)
+        => StartCoroutine(AsyncSpeedBoost(newSpeed, time));
+    
+    private IEnumerator AsyncSpeedBoost(float newSpeed, float time)
     {
         speed = newSpeed;
         yield return new WaitForSeconds(time);
