@@ -910,6 +910,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1151025612}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnRootCompletion
       objectReference: {fileID: 0}
