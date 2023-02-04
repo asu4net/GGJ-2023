@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
+
 public class RootRegion : MonoBehaviour
 {
     [SerializeField] private Transform endRegion;
@@ -21,7 +22,9 @@ public class RootRegion : MonoBehaviour
 
     [Header("Speed Boosts")]
 
-    public static UnityEvent<QualityTiming> RootCompletion;
+    public UnityEvent<QualityTiming> OnRootCompletion;
+    public UnityEvent OnRootPress;
+    public UnityEvent OnRootRelease;
 
     private Transform Car;
 
@@ -46,7 +49,6 @@ public class RootRegion : MonoBehaviour
     void Start()
     {
         Car = GameObject.FindGameObjectWithTag("Player").transform;
-        RootCompletion = new UnityEvent<QualityTiming>();
     }
 
     // Update is called once per frame
@@ -60,18 +62,19 @@ public class RootRegion : MonoBehaviour
         {
             if (isRooting)
             {
+                OnRootRelease.Invoke();
                 heldTime = Time.fixedTime - lastHeldTime;
 
                 if (heldTime < holdTimeThreshold)
                 {
-                    RootCompletion.Invoke(QualityTiming.Bad);
+                    OnRootCompletion.Invoke(QualityTiming.Bad);
                     canRoot = false;
                     hasRooted = true;
                     return;
                 }
 
                 QualityTiming timing = evaluateGoodnessOfTiming(Car);
-                RootCompletion.Invoke(timing);
+                OnRootCompletion.Invoke(timing);
 
                 canRoot = false;
             }
@@ -86,6 +89,7 @@ public class RootRegion : MonoBehaviour
             {
                 isRooting = true;
                 hasRooted = true;
+                OnRootPress.Invoke();
             }
             lastHeldTime = Time.fixedTime;
         }
@@ -112,7 +116,7 @@ public class RootRegion : MonoBehaviour
     {
         if (!hasRooted && canRoot)
         {
-            RootCompletion.Invoke(QualityTiming.Bad);
+            OnRootCompletion.Invoke(QualityTiming.Bad);
             canRoot = false;
         }
         canRoot = false;

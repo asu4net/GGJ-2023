@@ -548,6 +548,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1151025612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630852684154407370, guid: b7faeffa23cabf544ae06aa73fdd8382, type: 3}
+  m_PrefabInstance: {fileID: 1674528341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151025608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37170f52e8829f4f87f95a95909e341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1184636069
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +892,34 @@ PrefabInstance:
     - target: {fileID: 6636634651355865752, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: m_Name
       value: RootRegion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: RootCompletion.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: RootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1151025608}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1151025612}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRootCompletion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CarMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: OnRootCompletion.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865755, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: m_RootOrder
