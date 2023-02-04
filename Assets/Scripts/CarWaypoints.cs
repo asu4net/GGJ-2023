@@ -7,9 +7,9 @@ using UnityEngine.Serialization;
 [ExecuteInEditMode]
 public class CarWaypoints : MonoBehaviour
 {
-    private List<Transform> wayPoints;
-    [SerializeField] private Color debugColor = Color.green;
-    [SerializeField] private float sphereRadius = 0.5f;
+    List<Transform> wayPoints = new();
+    [SerializeField] Color debugColor = Color.green;
+    [SerializeField] float sphereRadius = 0.5f;
     
     void Awake()
     {
@@ -39,7 +39,7 @@ public class CarWaypoints : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         Gizmos.color = debugColor;
         if (wayPoints.Count > 0)
