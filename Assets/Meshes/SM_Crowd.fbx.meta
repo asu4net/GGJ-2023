@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: da415da74078d564d85cb38a13718807
+guid: 3d6d77b39c2c1c945aeea74740041ca9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caretos_developers
+    second: {fileID: 2100000, guid: abd992d7c31ae3b4bb66f5a03e4f7338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crowd
+    second: {fileID: 2100000, guid: 729bfb4ab72449c4a911cbe9ea2635b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crowd_stand
+    second: {fileID: 2100000, guid: 7e250a0710ffa9b429a18118db0a7cfd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

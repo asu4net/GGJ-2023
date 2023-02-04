@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: d4a831f60bcd39345aeb777334fd771b
+guid: 224975119d9394f439ede3c60237b9b7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #28
-    second: {fileID: 2100000, guid: 950d9fcc5a120a04687c9b07a9db02e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "Suelo habitaci\xF3n"
-    second: {fileID: 2100000, guid: 950d9fcc5a120a04687c9b07a9db02e9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
