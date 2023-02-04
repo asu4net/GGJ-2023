@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointsSlot: {fileID: 0}
-  speed: 20
+  speed: 7
   distanceToChangeWaypoint: 0.1
   lookAtSmoothValue: 0.05
 --- !u!54 &285070641706032108

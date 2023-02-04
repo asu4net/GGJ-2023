@@ -107,14 +107,17 @@ public class RootRegion : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Car")) return;
         canRoot = true;
         hasRooted = false;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (!hasRooted && canRoot)
+        if (other.gameObject.layer != LayerMask.NameToLayer("Car")) return;
+        if (!hasRooted && canRoot || isRooting && !hasRooted)
         {
+            Debug.Log("Deberia fallar aquí, sip");
             OnRootCompletion.Invoke(QualityTiming.Bad);
             canRoot = false;
         }

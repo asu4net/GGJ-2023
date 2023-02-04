@@ -6,8 +6,13 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     [SerializeField] private CarWaypoints waypointsSlot;
-    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float speed = 6.0f;
+    [SerializeField] private float badSpeed = 4.0f;
+    [SerializeField] private float OkSpeed = 8.0f;
+    [SerializeField] private float GoodSpeed = 9.0f;
+    [SerializeField] private float PerfectSpeed = 10f;
     [SerializeField] private float distanceToChangeWaypoint = 0.1f;
+
     [SerializeField][Range(0, 1)] private float lookAtSmoothValue = 0.5f;
 
     private int currWaypoint = 0;
@@ -19,19 +24,19 @@ public class CarMovement : MonoBehaviour
         switch (qualityTiming)
         {
             case RootRegion.QualityTiming.Bad:
-                StartCoroutine(AsyncSpeedBoost(6f, 2f));
+                StartCoroutine(AsyncSpeedBoost(badSpeed, 1.5f));
                 break;
 
             case RootRegion.QualityTiming.Ok:
-                StartCoroutine(AsyncSpeedBoost(12f, 2f));
+                StartCoroutine(AsyncSpeedBoost(OkSpeed, 1.5f));
                 break;
 
             case RootRegion.QualityTiming.Good:
-                StartCoroutine(AsyncSpeedBoost(16f, 2f));
+                StartCoroutine(AsyncSpeedBoost(GoodSpeed, 1.5f));
                 break;
 
             case RootRegion.QualityTiming.Perfect:
-                StartCoroutine(AsyncSpeedBoost(22f, 2f));
+                StartCoroutine(AsyncSpeedBoost(PerfectSpeed, 1.5f));
                 break;
 
             default:
