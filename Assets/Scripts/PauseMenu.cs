@@ -15,18 +15,12 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        PauseMenu[] pauseMenus = FindObjectsOfType<PauseMenu>();
-
-        if (pauseMenus.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void Start()
     {
         //SwitchPause();
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public void OnButtonPlay()
@@ -57,7 +51,7 @@ public class PauseMenu : MonoBehaviour
             SwitchPause();
     }
 
-    void SwitchPause()
+    public void SwitchPause()
     {
         animator.SetTrigger("Switch");
         gamePaused = !gamePaused;
