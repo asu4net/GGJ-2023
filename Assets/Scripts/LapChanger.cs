@@ -24,7 +24,7 @@ public class LapChanger : MonoBehaviour
             eslaDePrueba = false;
             return;
         }
-        if (counter == 0) return;
+        if (counter < 0) return;
         sr.sprite = numbers[counter];
         counter--;
     }
