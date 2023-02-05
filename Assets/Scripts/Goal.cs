@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField] private LayerMask player;
 
     public UnityEvent GoalCrossed;
+    public UnityEvent RivalGoalCrossed;
     // Start is called before the first frame update
 
     void OnTriggerEnter(Collider other)
@@ -15,6 +15,13 @@ public class Goal : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Car"))
         {
             GoalCrossed.Invoke();
+            Debug.Log("Player");
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("RivalCar"))
+        {
+            RivalGoalCrossed.Invoke();
+            Debug.Log("Rival");
         }
     }
 }
