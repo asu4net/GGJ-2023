@@ -15,13 +15,11 @@ public class Goal : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Car"))
         {
             GoalCrossed.Invoke();
-            Debug.Log("Player");
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("RivalCar"))
         {
             RivalGoalCrossed.Invoke();
-            Debug.Log("Rival");
         }
     }
 }

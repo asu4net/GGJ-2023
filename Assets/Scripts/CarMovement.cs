@@ -22,6 +22,8 @@ public class CarMovement : MonoBehaviour
     private int currWaypoint = 0;
     private float defaultSpeed = 0;
 
+    [SerializeField] private Animator carAnimator;
+
     public void OnRootCompletion(RootRegion.QualityTiming qualityTiming)
     {
 
@@ -50,6 +52,16 @@ public class CarMovement : MonoBehaviour
             default:
                 break;
         }
+
+        if (qualityTiming == RootRegion.QualityTiming.Bad)
+        {
+            carAnimator.SetTrigger("Fail");
+        }
+        else
+        {
+            carAnimator.SetTrigger("Boost");
+        }
+
 
         if (speed > maximumSpeed) speed = maximumSpeed;
     }
@@ -99,5 +111,12 @@ public class CarMovement : MonoBehaviour
         speed -= speedLoss;
 
         if (speed < minimumSpeed) speed = minimumSpeed;
+    }
+
+
+    private void ResetAnimations()
+    {
+        carAnimator.SetTrigger("Boost");
+        carAnimator.SetTrigger("Fail");
     }
 }

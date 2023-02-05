@@ -50,8 +50,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointsSlot: {fileID: 0}
   speed: 7
+  badDecrease: 1
+  OkIncrease: 8
+  GoodIncrease: 9
+  PerfectIncrease: 10
   distanceToChangeWaypoint: 0.1
+  speedLoss: 0.001
+  minimumSpeed: 4
+  maximumSpeed: 15
   lookAtSmoothValue: 0.05
+  carAnimator: {fileID: 6040730246060117104}
 --- !u!54 &285070641706032108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,5 +203,10 @@ PrefabInstance:
 --- !u!4 &4193836657989786193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7819978288376633409, guid: 307264d196e207f4494d76eaece42c11, type: 3}
+  m_PrefabInstance: {fileID: 6248081384192786960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6040730246060117104 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 387688680905887328, guid: 307264d196e207f4494d76eaece42c11, type: 3}
   m_PrefabInstance: {fileID: 6248081384192786960}
   m_PrefabAsset: {fileID: 0}
