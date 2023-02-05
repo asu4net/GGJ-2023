@@ -22,9 +22,11 @@ public class Crowd : MonoBehaviour
         if (qualityTiming == RootRegion.QualityTiming.Bad)
         {
             animator.SetTrigger("Fail");
+            animator.ResetTrigger("Hold");
             return;
         }
 
         animator.SetTrigger("Good");
+        animator.ResetTrigger("Hold");
     }
 }

@@ -170,7 +170,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.764
+  m_Volume: 0.403
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -839,8 +839,24 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
+      propertyPath: speedLoss
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
+      propertyPath: OkIncrease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
+      propertyPath: GoodIncrease
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: PerfectSpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
+      propertyPath: PerfectIncrease
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3564687705672401131, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: m_Layer

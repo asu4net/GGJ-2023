@@ -7,11 +7,15 @@ public class CarMovement : MonoBehaviour
 {
     [SerializeField] private CarWaypoints waypointsSlot;
     [SerializeField] private float speed = 6.0f;
-    [SerializeField] private float badSpeed = 4.0f;
-    [SerializeField] private float OkSpeed = 8.0f;
-    [SerializeField] private float GoodSpeed = 9.0f;
-    [SerializeField] private float PerfectSpeed = 10f;
+    [SerializeField] private float badDecrease = 1.0f;
+    [SerializeField] private float OkIncrease = 8.0f;
+    [SerializeField] private float GoodIncrease = 9.0f;
+    [SerializeField] private float PerfectIncrease = 10f;
     [SerializeField] private float distanceToChangeWaypoint = 0.1f;
+
+    [SerializeField] private float speedLoss = 0.001f;
+    [SerializeField] private float minimumSpeed = 4.0f;
+    [SerializeField] private float maximumSpeed = 15f;
 
     [SerializeField][Range(0, 1)] private float lookAtSmoothValue = 0.5f;
 
@@ -24,24 +28,30 @@ public class CarMovement : MonoBehaviour
         switch (qualityTiming)
         {
             case RootRegion.QualityTiming.Bad:
-                StartCoroutine(AsyncSpeedBoost(badSpeed, 1.5f));
+                //StartCoroutine(AsyncSpeedBoost(badSpeed, 1.5f));
+                speed -= badDecrease;
                 break;
 
             case RootRegion.QualityTiming.Ok:
-                StartCoroutine(AsyncSpeedBoost(OkSpeed, 1.5f));
+                //StartCoroutine(AsyncSpeedBoost(OkSpeed, 1.5f));
+                speed += OkIncrease;
                 break;
 
             case RootRegion.QualityTiming.Good:
-                StartCoroutine(AsyncSpeedBoost(GoodSpeed, 1.5f));
+                //StartCoroutine(AsyncSpeedBoost(GoodSpeed, 1.5f));
+                speed += GoodIncrease;
                 break;
 
             case RootRegion.QualityTiming.Perfect:
-                StartCoroutine(AsyncSpeedBoost(PerfectSpeed, 1.5f));
+                //StartCoroutine(AsyncSpeedBoost(PerfectSpeed, 1.5f));
+                speed += PerfectIncrease;
                 break;
 
             default:
                 break;
         }
+
+        if (speed > maximumSpeed) speed = maximumSpeed;
     }
 
     private IEnumerator AsyncSpeedBoost(float newSpeed, float time)
@@ -81,5 +91,13 @@ public class CarMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
             Quaternion.LookRotation(currentDir, Vector3.up), lookAtSmoothValue);
+    }
+
+
+    private void FixedUpdate()
+    {
+        speed -= speedLoss;
+
+        if (speed < minimumSpeed) speed = minimumSpeed;
     }
 }

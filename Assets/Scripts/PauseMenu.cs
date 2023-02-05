@@ -7,10 +7,10 @@ using UnityEngine.Events;
 public class PauseMenu : MonoBehaviour
 {
     public UnityEvent<bool> OnPause;
-    
+
     private Animator animator;
     private bool gamePaused = false;
-    
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -18,7 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        SwitchPause();
+        //SwitchPause();
+        DontDestroyOnLoad(this);
     }
 
     public void OnButtonPlay()
@@ -28,19 +29,19 @@ public class PauseMenu : MonoBehaviour
 
     public void OnButtonReset()
     {
-        
+
     }
 
     public void OnButtonExit()
     {
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            Debug.LogError("Waypoints missing");
+        UnityEditor.EditorApplication.isPlaying = false;
+        Debug.LogError("Waypoints missing");
 #else
         Application.Quit();
 #endif
     }
-    
+
     // Update is called once per frame
     void Update()
     {
