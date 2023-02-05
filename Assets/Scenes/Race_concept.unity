@@ -1042,11 +1042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: speedLoss
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: OkIncrease
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: badDecrease
@@ -1054,19 +1054,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: GoodIncrease
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: PerfectSpeed
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
+      propertyPath: maximumSpeed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: minimumSpeed
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1630852684154407370, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: PerfectIncrease
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3564687705672401131, guid: 1728761e69d2c4c488bad50a4fa974ca, type: 3}
       propertyPath: m_Layer
@@ -1824,11 +1828,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: GoodThreshold
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: PerfectThreshold
-      value: 2.5
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: holdTimeThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: OnRootPress.m_PersistentCalls.m_Calls.Array.size
@@ -2278,6 +2286,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1599109215497585678, guid: 2b1be61fcb466924993f3d1c82ea0881, type: 3}
+      propertyPath: speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599109215497585678, guid: 2b1be61fcb466924993f3d1c82ea0881, type: 3}
+      propertyPath: speedLoss
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599109215497585678, guid: 2b1be61fcb466924993f3d1c82ea0881, type: 3}
+      propertyPath: maximumSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599109215497585678, guid: 2b1be61fcb466924993f3d1c82ea0881, type: 3}
+      propertyPath: minimumSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4717738697490903976, guid: 2b1be61fcb466924993f3d1c82ea0881, type: 3}
       propertyPath: m_Name
       value: P_Car_Rival
@@ -5118,7 +5142,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: GoodThreshold
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: PerfectThreshold
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: holdTimeThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: OnRootPress.m_PersistentCalls.m_Calls.Array.size
@@ -5808,11 +5840,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: GoodThreshold
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: PerfectThreshold
-      value: 2.5
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
+      propertyPath: holdTimeThreshold
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6636634651355865753, guid: 8bbd0c4addabc6b4cb7ef68b57ca7004, type: 3}
       propertyPath: OnRootPress.m_PersistentCalls.m_Calls.Array.size
