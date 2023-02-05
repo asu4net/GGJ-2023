@@ -13,4 +13,12 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Race_concept");
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }

@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 public class AutoPause : MonoBehaviour
 {
     public UnityEvent autoPause;
@@ -12,6 +14,7 @@ public class AutoPause : MonoBehaviour
 
     private void AutoPauseF()
     {
-        autoPause.Invoke();
+        //autoPause.Invoke();
+        SceneManager.LoadScene("Main Menu");
     }
 }
