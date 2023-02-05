@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endRegion: {fileID: 6636634651404619201}
   RootButton: 330
-  SecondaryRootButton: 115
+  SecondaryRootButton: 32
   OkThreshold: 15
   GoodThreshold: 8
   PerfectThreshold: 3
