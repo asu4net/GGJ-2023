@@ -117,7 +117,6 @@ public class RootRegion : MonoBehaviour
         if (other.gameObject.layer != LayerMask.NameToLayer("Car")) return;
         if (!hasRooted && canRoot || isRooting && !hasRooted)
         {
-            Debug.Log("Deberia fallar aquí, sip");
             OnRootCompletion.Invoke(QualityTiming.Bad);
             canRoot = false;
         }
