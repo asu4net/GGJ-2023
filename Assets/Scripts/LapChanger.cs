@@ -8,6 +8,8 @@ public class LapChanger : MonoBehaviour
     public List<Sprite> numbers;
     int counter = 4;
 
+    bool eslaDePrueba = true;
+
     void Start()
     {
         counter = 4;
@@ -17,6 +19,12 @@ public class LapChanger : MonoBehaviour
 
     public void LowerLapVisuals()
     {
+        if (eslaDePrueba)
+        {
+            eslaDePrueba = false;
+            return;
+        }
+        if (counter == 0) return;
         sr.sprite = numbers[counter];
         counter--;
     }
