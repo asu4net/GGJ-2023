@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        PauseMenu[] pauseMenus = FindObjectsOfType<PauseMenu>();
+
+        if (pauseMenus.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Start()
@@ -29,7 +36,8 @@ public class PauseMenu : MonoBehaviour
 
     public void OnButtonReset()
     {
-
+        SwitchPause();
+        SceneManager.LoadScene("Race_concept", LoadSceneMode.Single);
     }
 
     public void OnButtonExit()
