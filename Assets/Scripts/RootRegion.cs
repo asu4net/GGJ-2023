@@ -57,7 +57,45 @@ public class RootRegion : MonoBehaviour
 
         if (!canRoot) return;
 
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    if (!isRooting)
+                    {
+                        isRooting = true;
+                        hasRooted = true;
+                        OnRootPress.Invoke();
+                    }
+                    lastHeldTime = Time.fixedTime;
+                break;
+
+                case TouchPhase.Ended:
+                    if (isRooting && hasRooted)
+                    {
+                        heldTime = Time.fixedTime - lastHeldTime;
+
+                        if (heldTime < holdTimeThreshold)
+                        {
+                            OnRootCompletion.Invoke(QualityTiming.Bad);
+                            canRoot = false;
+                            hasRooted = true;
+                            return;
+                        }
+
+                        QualityTiming timing = evaluateGoodnessOfTiming(Car);
+                        OnRootCompletion.Invoke(timing);
+
+                        canRoot = false;
+                    }
+                    break;
+
+
+            }
+        }
         if (Input.GetKeyUp(RootButton) || Input.GetKeyUp(SecondaryRootButton))
         {
             if (isRooting && hasRooted)
